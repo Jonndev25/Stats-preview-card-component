@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* #Primary */
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet_accent: hsl(277, 64%, 61%);
+
+  /* ### Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: var(--Very-dark-blue);
+  padding: 2em 1em;
+}
+
+.container {
+  background: var(--Dark-desaturated-blue);
+  width: 100%;
+  border-radius: 0.6em;
+  overflow: hidden;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+}
+
+.container .image-part {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.container .image-part img {
+  width: 100%;
+  height: auto;
+}
+
+.image-part::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background: var(--Soft-violet_accent);
+  z-index: 999;
+}
+
+.text-content {
+  padding: 2.5em 2em;
+  text-align: center;
+}
+
+.text-content h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--White);
+  font-family: "Inter";
+  margin-bottom: 0.5em;
+}
+
+.text-content h1 span {
+  color: var(--Soft-violet_accent);
+}
+
+.text-content > p {
+  line-height: 1.6;
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  color: var(--Slightly-transparent-white);
+  margin-bottom: 2.8em;
+}
+
+.text-content .stats .stat:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.text-content .stats h2 {
+  margin-bottom: 0.2em;
+  border: 1px;
+  color: var(--White);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.stats p {
+  color: var(--Slightly-transparent-white);
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+/* Large screen */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 93%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .container .image-part {
+    background: url(images/image-header-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 110%;
+  }
+
+  .container .image-part img {
+    display: none;
+  }
+
+  .text-content {
+    padding: 4.8em 5% 4.5em 5%;
+    text-align: left;
+    width: 100%;
+  }
+
+  .text-content h1 {
+    font-size: 2rem;
+    margin-bottom: .7em;
+  }
+
+  .text-content > p {
+    font-size: .91rem;
+    width: 100%;
+    line-height: 1.7;
+    margin-bottom: 5em;
+  }
+
+  .text-content .stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .text-content .stats .stat:not(:last-child) {
+    margin-bottom: 0;
+    text-transform: lowercase;
+  }
+
+  .stats .stat p {
+    font-size: .85rem;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    width: 85.5%;
+  } 
+
+  .container .text-content {
+    padding: 4.8em 6.5% 4.5em 6.5%;
+  }
+
+  .text-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .text-content .stats {
+    width: 82%;
+  }
+
+  .text-content p {
+    width: 90%;
+  }
+}
