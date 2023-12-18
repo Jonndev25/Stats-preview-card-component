@@ -105,6 +105,9 @@ body {
 
 /* Large screen */
 @media screen and (min-width: 768px) {
+  body {
+    padding: 0;
+  }
   .container {
     width: 93%;
     display: flex;
@@ -160,6 +163,9 @@ body {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    padding: 0;
+  }
   .container {
     width: 85.5%;
   } 
